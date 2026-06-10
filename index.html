@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>天使密緹電波療程後私密清潔照護導入評估表</title>
+  <style>
+    :root{--navy:#0b2d4d;--pink:#f2a6b8;--light:#fff7fa;--line:#e6edf2;--text:#26384a;--muted:#6b7b8c;--ok:#0f766e;--danger:#b42318}
+    *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif;background:#f7f9fb;color:var(--text);line-height:1.6}
+    .wrap{max-width:1040px;margin:0 auto;padding:24px}
+    .hero{background:linear-gradient(135deg,#fff,var(--light));border:1px solid var(--line);border-radius:22px;padding:28px;display:grid;grid-template-columns:1.3fr .7fr;gap:24px;box-shadow:0 12px 30px rgba(11,45,77,.08)}
+    .logo{font-weight:800;color:var(--navy);letter-spacing:.5px;margin-bottom:12px}.logo span{color:var(--pink)}
+    h1{font-size:30px;line-height:1.25;margin:0 0 12px;color:var(--navy)}
+    .lead{font-size:16px;color:var(--muted);margin:0}.badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;margin:12px 8px 0 0;font-size:13px;color:var(--navy)}
+    .cardimg{width:100%;border-radius:16px;border:1px solid var(--line);background:#fff;object-fit:cover;max-height:320px}
+    form{margin-top:20px}.section{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;margin:16px 0;box-shadow:0 8px 20px rgba(11,45,77,.04)}
+    h2{font-size:20px;margin:0 0 16px;color:var(--navy);border-left:6px solid var(--pink);padding-left:10px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    label.q{display:block;font-weight:700;margin:18px 0 8px;color:#173957}.req:after{content:" *";color:var(--danger)}
+    input[type="text"],input[type="tel"],input[type="email"],input[type="date"],select,textarea{width:100%;border:1px solid #d8e0e8;border-radius:12px;padding:11px 12px;font-size:15px;background:#fff;color:var(--text)}
+    textarea{min-height:88px;resize:vertical}.choices{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.choices label{border:1px solid #d8e0e8;border-radius:12px;padding:10px 12px;background:#fbfdff;display:flex;gap:8px;align-items:flex-start;cursor:pointer}.choices label:hover{border-color:var(--pink);background:#fff7fa}.choices.one{grid-template-columns:1fr}
+    .hint{font-size:13px;color:var(--muted);margin-top:6px}.actions{position:sticky;bottom:0;background:rgba(247,249,251,.95);padding:18px 0;display:flex;gap:12px;align-items:center;backdrop-filter:blur(8px)}
+    button{appearance:none;border:0;border-radius:14px;padding:13px 22px;font-size:16px;font-weight:800;cursor:pointer}.primary{background:var(--navy);color:#fff}.secondary{background:#fff;color:var(--navy);border:1px solid var(--line)}
+    #status{font-weight:700}.success{color:var(--ok)}.error{color:var(--danger)}.small{font-size:13px;color:var(--muted)}
+    @media(max-width:760px){.hero{grid-template-columns:1fr}.grid,.choices{grid-template-columns:1fr}.wrap{padding:14px}h1{font-size:24px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <div>
+      <div class="logo">DUET V <span>×</span> P113+ 私密清潔照護</div>
+      <h1>天使密緹電波療程後私密清潔照護導入評估表</h1>
+      <p class="lead">供業務拜訪醫師／診所時填寫。資料會寫入 Google Sheet，後續可依 Lead Grade、合作模式、診所需求做統計與追蹤。</p>
+      <div><span class="badge">療程後照護</span><span class="badge">診所導入評估</span><span class="badge">業務名單分級</span></div>
+    </div>
+    <img src="product-card.jpg" class="cardimg" alt="私密抗菌潔膚露產品小卡">
+  </section>
+
+  <form id="leadForm">
+    <section class="section">
+      <h2>診所／醫師基本資料</h2>
+      <div class="grid">
+        <div><label class="q req">業務姓名</label><input name="salesName" required></div>
+        <div><label class="q req">診所名稱</label><input name="clinicName" required></div>
+        <div><label class="q">醫師姓名</label><input name="doctorName"></div>
+        <div><label class="q">診所電話</label><input name="clinicPhone" type="tel"></div>
+        <div><label class="q">聯絡人</label><input name="contactName"></div>
+        <div><label class="q">聯絡人職稱</label><input name="contactTitle"></div>
+        <div><label class="q">聯絡人手機</label><input name="mobile" type="tel"></div>
+        <div><label class="q">Email</label><input name="email" type="email"></div>
+        <div><label class="q">縣市</label><input name="city" placeholder="例：台北市"></div>
+        <div><label class="q">區域</label><input name="district" placeholder="例：大安區"></div>
+        <div><label class="q">科別／診所類型</label><input name="specialty" placeholder="婦產科／醫美／泌尿科／皮膚科"></div>
+        <div><label class="q">是否已導入 DUET V</label><select name="hasDuet"><option value="">請選擇</option><option>已導入</option><option>評估中</option><option>尚未導入</option><option>不確定</option></select></div>
+      </div>
+      <label class="q">地址</label><input name="address">
+      <label class="q">拜訪備註</label><textarea name="note" placeholder="例：醫師希望先看成分資料、櫃台可陳列、需下週追蹤"></textarea>
+    </section>
+
+    <section class="section"><h2>A. 診所基本資料與療程現況</h2>
+      <label class="q req">1. 診所目前是否有提供女性私密相關療程？</label><div class="choices one" data-radio="q1"></div>
+      <label class="q">2. 診所目前私密療程主要客群為？可複選</label><div class="choices" data-check="q2"></div><input name="q2Other" placeholder="其他客群補充">
+      <label class="q req">3. 診所目前在私密療程後，是否會提供居家照護建議？</label><div class="choices one" data-radio="q3"></div>
+      <label class="q req">4. 療程後是否會建議客人使用特定清潔產品？</label><div class="choices one" data-radio="q4"></div>
+    </section>
+
+    <section class="section"><h2>B. 產品接受度與醫師重視條件</h2>
+      <label class="q req">5. 若有一款弱酸性、無皂鹼、無酒精、無 Paraben 的私密外部清潔產品，診所是否願意了解？</label><div class="choices one" data-radio="q5"></div>
+      <label class="q">6. 醫師最在意私密清潔產品的哪些條件？請選 3 項</label><div class="choices" data-check="q6" data-max="3"></div><div class="hint">最多選 3 項，超過會自動提醒。</div><input name="q6Other" placeholder="其他條件補充">
+    </section>
+
+    <section class="section"><h2>C. DUET V 療程後搭配可行性</h2>
+      <label class="q req">7. 若將保潔露設計成 DUET V 療程後的居家照護建議品，診所接受度如何？</label><div class="choices one" data-radio="q7"></div>
+      <label class="q">8. 診所比較能接受哪一種合作方式？</label><div class="choices" data-check="q8"></div>
+      <label class="q">9. 如果作為療程後照護品，診所認為合適的贈送／加購時機是？</label><div class="choices" data-check="q9"></div>
+    </section>
+
+    <section class="section"><h2>D. 商業條件</h2>
+      <label class="q req">10. 診所可接受的單瓶售價區間為？</label><div class="choices one" data-radio="q10"></div>
+      <label class="q req">11. 若診所販售，期望毛利率為？</label><div class="choices one" data-radio="q11"></div>
+      <label class="q req">12. 每月預估可銷售／搭配數量？</label><div class="choices one" data-radio="q12"></div>
+    </section>
+
+    <section class="section"><h2>E. 銷售輔助需求</h2>
+      <label class="q">13. 診所若導入，最需要哪些輔銷工具？</label><div class="choices" data-check="q13"></div>
+      <label class="q req">14. 診所是否願意讓業務提供「療程後照護衛教包」？</label><div class="choices one" data-radio="q14"></div>
+    </section>
+
+    <section class="section"><h2>F. 醫師疑慮與資料需求</h2>
+      <label class="q">15. 醫師對私密清潔產品最大的疑慮是什麼？</label><div class="choices" data-check="q15"></div><input name="q15Other" placeholder="其他疑慮補充">
+      <label class="q">16. 若要導入，醫師希望先看到哪些資料？</label><div class="choices" data-check="q16"></div>
+      <label class="q">建議下一步</label><select name="followUp"><option>提供樣品</option><option>提供成分／檢驗資料</option><option>安排產品簡報</option><option>提供報價</option><option>暫緩追蹤</option><option>其他</option></select>
+      <label class="q">下次追蹤日期</label><input name="nextFollowDate" type="date">
+    </section>
+
+    <div class="actions"><button class="primary" type="submit">送出到 Google Sheet</button><button type="button" class="secondary" onclick="leadForm.reset();window.scrollTo(0,0)">清空重填</button><span id="status"></span></div>
+    <p class="small">提醒：此表單是診所導入評估工具，避免在對外文案中宣稱治療感染、改善疾病或提升醫療設備療效。</p>
+  </form>
+</div>
+<script>
+const GAS_URL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+const options = {
+ q1:['有，且穩定推廣','有，但不是主力項目','偶爾有客人詢問','目前沒有，但未來有興趣','完全沒有規劃'],
+ q2:['產後女性','熟齡／更年期女性','有乾澀不適困擾者','有漏尿困擾者','私密緊實需求者','醫美保養型客戶','其他'],
+ q3:['有標準衛教單','醫師／護理師口頭提醒','視個案情況提醒','幾乎沒有特別說明','不確定'],
+ q4:['會，已有固定品牌','會，但沒有固定品牌','偶爾會建議','不會，避免推產品','想了解是否有合適產品'],
+ q5:['非常願意','可以了解','要看成分與安全性資料','要看價格與利潤','暫時沒興趣'],
+ q6:['成分溫和','pH 值適合私密肌膚','不刺激','無皂鹼','無酒精','無 Paraben','抗菌相關成分','品牌可信度','客人回購率','診所利潤','是否有檢驗資料','是否有衛署／化粧品登錄資料','包裝質感','其他'],
+ q7:['很適合，可放入療程包','可以作為加購品','可放櫃台零售','可作為體驗贈品','需要醫師評估後再決定','不適合搭配療程'],
+ q8:['購買療程設備，搭配保潔露贈品','療程套組內含保潔露','客人療程後加購','櫃台陳列販售','診所專屬會員價','活動檔期贈送','醫師不希望搭配販售產品'],
+ q9:['第一次療程後','完成療程包時','產後／熟齡客群諮詢後','經期不適保養衛教時','櫃台結帳時','不適合主動推薦'],
+ q10:['299 元以下','300–499 元','500–699 元','700–899 元','900 元以上','要看容量與品牌定位'],
+ q11:['30% 以下','30–40%','40–50%','50% 以上','主要作為服務加值，不以利潤為主'],
+ q12:['1–10 瓶','11–30 瓶','31–50 瓶','51–100 瓶','100 瓶以上','需試賣後評估'],
+ q13:['醫師版成分說明','櫃台立牌','療程後衛教單','LINE 圖文素材','IG／FB 貼文素材','小卡／DM','試用品','客人 Q&A 話術','法規安全版文案','產品檢驗資料'],
+ q14:['願意','可以先看內容','只接受中性衛教，不要太商業','不希望放產品資訊','不需要'],
+ q15:['怕刺激','怕客人誤以為能治療疾病','怕影響療程後恢復','怕造成醫療廣告風險','怕產品品質不穩定','怕客訴','怕不好賣','沒有疑慮','其他'],
+ q16:['全成分表','化粧品登錄資料','檢驗報告','安全性資料','使用方式','禁忌與注意事項','醫師版產品簡報','消費者版 DM','試用樣品']
+};
+function buildChoices(){
+ document.querySelectorAll('[data-radio]').forEach(box=>{const name=box.dataset.radio;box.innerHTML=options[name].map(v=>`<label><input type="radio" name="${name}" value="${v}" ${['q1','q3','q4','q5','q7','q10','q11','q12','q14'].includes(name)?'required':''}> <span>${v}</span></label>`).join('')});
+ document.querySelectorAll('[data-check]').forEach(box=>{const name=box.dataset.check;box.innerHTML=options[name].map(v=>`<label><input type="checkbox" name="${name}" value="${v}"> <span>${v}</span></label>`).join('')});
+ document.querySelectorAll('[data-max]').forEach(box=>{const max=Number(box.dataset.max);box.addEventListener('change',e=>{const checked=box.querySelectorAll('input:checked');if(checked.length>max){e.target.checked=false;alert(`此題最多只能選 ${max} 項`)}})});
+}
+buildChoices();
+function collect(form){
+ const fd=new FormData(form), data={};
+ for(const [k,v] of fd.entries()){ if(data[k]) data[k]=Array.isArray(data[k])?[...data[k],v]:[data[k],v]; else data[k]=v; }
+ ['q2','q6','q8','q9','q13','q15','q16'].forEach(k=>{ if(!data[k]) data[k]=[]; if(!Array.isArray(data[k])) data[k]=[data[k]]; });
+ data.source='Web Form'; return data;
+}
+document.getElementById('leadForm').addEventListener('submit', async e=>{
+ e.preventDefault(); const status=document.getElementById('status'); status.textContent='送出中…'; status.className='';
+ if(GAS_URL.includes('PASTE_YOUR')){ status.textContent='請先把 GAS_URL 換成 Apps Script 部署網址'; status.className='error'; return; }
+ try{
+   const res=await fetch(GAS_URL,{method:'POST',mode:'cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(collect(e.target))});
+   const json=await res.json(); if(!json.ok) throw new Error(json.message||'送出失敗');
+   status.textContent=`已送出，系統判定：${json.grade}｜${json.strategy}`; status.className='success'; e.target.reset(); window.scrollTo({top:0,behavior:'smooth'});
+ }catch(err){ status.textContent='送出失敗：'+err.message; status.className='error'; }
+});
+</script>
+</body>
+</html>
